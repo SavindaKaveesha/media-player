@@ -20,8 +20,11 @@ namespace media_player
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
+            //selecting only necessary files
+            openFileDialog1.Filter = "Media Files|*.mp3;*.mp4;*.wav;*.avi;*.mkv|All Files|*.*";
+
             if (openFileDialog1.ShowDialog() == DialogResult.OK) {
-                axWindowsMediaPlayer1.settings.autoStart = false;
+                axWindowsMediaPlayer1.settings.autoStart = true;
                 axWindowsMediaPlayer1.URL = openFileDialog1.FileName;
             }
         }
